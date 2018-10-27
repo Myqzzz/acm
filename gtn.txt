@@ -1,0 +1,83 @@
+
+--------------------------------
+ll 列出当下目录下文件
+mkdir 新建文件夹
+mv a.txt b.txt  改名
+
+.git 本地库相关文件
+
+git init 本地库初始化
+ls -lA 隐藏文件
+cat <file> 打开文件
+
+设置签名（标识身份）：
+项目级别
+git config user.name <name>
+git config user.email <email>
+cat .git/config 查看信息
+系统用户级别
+git config --global user.name <name>
+git config --global user.email <email>
+cat ~/.gitconfig 查看信息
+
+rm <文件> 删除文件
+
+git status 查看工作区、暂存区状态
+git add <file> 添加到缓存区
+git rm --cached <file>从缓存区删除
+git commit <file> 提交到本地库
+
+
+git log 查看版本记录
+git log --pretty=oneline 简洁显示
+git log --oneline
+git log reflog
+
+
+基于索引值操作
+git reset --hard {局部索引值}
+eg:git reset --hard b393ea1
+
+^和~只能后退
+git reset --hard HEAD^  后退一步
+git reset --hard HEAD~3 后退三步
+
+git help reset 查看reset命令的说明
+
+reset 命令
+--soft 本地库移动head指针（1）
+--mixed （1）+重置暂存区（2）
+--hard （1）+（2）+重置工作区（3）
+
+git diff <file> 工作区和暂存区比较
+git diff HEAD（历史版本） <file> 工作区和历史版本比较
+git diff 所有文件
+
+
+
+git clean -f -n 查看untrack 文件
+git clean -f 删除untrack 文件
+
+
+git branch -v 查看分支
+git branch <name> 创建
+git checkout <name> 切换
+
+
+合并
+git checkout [name]
+git merge [分支名]
+
+冲突
+修改 -> git add ->git commit - m "" 不带文件名
+
+
+git remote -v 查看别名
+git remote add  x  y用x代替
+git remote remove  删除
+
+git push x y 把 x推送给y分支
+
+克隆库
+git clone {地址}
+-------------------------------
