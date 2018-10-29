@@ -1,9 +1,10 @@
 #include<iostream>
+#include<algorithm>
 
 using namespace std;
 
 
-const int maxn= 1e6+10;
+const int maxn= 1e5+10;
 int a[maxn],l[maxn],r[maxn];
 
 int main(){
@@ -12,14 +13,18 @@ int main(){
 		for(int i=1;i<=n;i++){
 			cin>>a[i];
 		}
-		int sum=-1001;
+		int sum=-1001,sun=-1001;
 		for(int i=1;i<=n;i++){
-			sum>0?=sum+a[i]:a[i];
-			l[i]=sum;
+			sum=sum>0?(sum+a[i]):a[i];
+			sun=max(sun,sum);	
+			l[i]=sun;
+		
 		}
-		sum=-1001;
-		for(int i=n;i<=n;i++){
-			sum>0?=sum+a[i]:a[i];
+		sum=sun=-1001;
+		for(int i=n;i>=1;i--){
+			sum=sum>0?(sum+a[i]):a[i];
+			sun=max(sun,sum);
+			r[i]=sun;
 		}
 		int mx=-1e9;
 		for(int i=2;i<=n;i++){
