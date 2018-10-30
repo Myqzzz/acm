@@ -70,6 +70,7 @@ git checkout <name> 切换
 git checkout [name]
 git merge [分支名]
 
+
 冲突
 修改 -> git add ->git commit - m "" 不带文件名
 
@@ -79,7 +80,8 @@ git remote add  x  y用x代替
 git remote remove  删除
 
 git push x y 把 x推送给y分支
-
+git merge org/master 远程合并到本地
 克隆库
 git clone {地址}
 -------------------------------
+
