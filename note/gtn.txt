@@ -2,6 +2,7 @@
 --------------------------------
 ll 列出当下目录下文件
 mkdir 新建文件夹
+rm -r <file> 删除文件夹
 mv a.txt b.txt  改名
 mv a.txt b a.txt移动到b
 
