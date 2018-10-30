@@ -5,6 +5,7 @@ mkdir 新建文件夹
 rm -r <file> 删除文件夹
 mv a.txt b.txt  改名
 mv a.txt b a.txt移动到b
+mv a b c -t d 移动a.b.c到d
 
 .git 本地库相关文件
 
