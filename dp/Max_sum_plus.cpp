@@ -1,3 +1,5 @@
+//51nod 1052 最大m字段和
+
 #include<cstdio>
 #include<algorithm>
 #include<cstring>

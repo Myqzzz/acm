@@ -1,3 +1,5 @@
+//hdu 1069 lcs + 权值
+
 #include<iostream>
 #include<algorithm>
 #include<cstring>
