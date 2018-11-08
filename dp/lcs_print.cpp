@@ -60,3 +60,113 @@ int main(){
 	Print(md,ans);
 	return 0;
 }
+
+///n*logn 存疑
+
+/*
+4 2
+5 2
+5 1
+
+4 1
+4 2
+5 2
+5 1
+
+1 8
+2 7
+3 6
+4 8
+5 4
+
+---??
+4 1
+4 2
+5 3
+5 2
+5 1
+
+*/
+/*
+#include<iostream>
+#include<cstdio>
+#include<algorithm>
+
+using namespace std;
+
+#define cio ios::sync_with_stdio(false),cin.tie(0),cout.tie(0)
+
+typedef long long ll;
+
+
+const int maxn=1e3+100;
+
+int dp[maxn];
+
+struct mouse{
+	int w,v,l;
+}p[maxn],d[maxn];
+
+bool cmp(mouse a,mouse b){
+	if(a.w==b.w)
+		return a.v>b.v;
+	return a.w<b.w;
+}
+
+void deal(mouse *a,mouse b){
+	a->w=b.w,a->v=b.v,a->l=b.l;
+}
+
+int Next[maxn];
+
+void print(int stp,int cnt){
+
+	if(cnt>0){
+	
+		print(Next[stp],cnt-1);
+		cout<<stp<<endl;
+	}
+}
+
+int main(){
+	cio;
+	int t=0;
+	while(++t,cin>>p[t].w>>p[t].v){
+       	 p[t].l=t;
+        }
+	t--;
+	sort(p+1,p+t+1,cmp);
+	int ct=1,ed=1;
+	for(int i=1;i<=t;i++){
+		Next[i]=-1;
+	}
+	deal(&d[ct],p[1]);
+	for(int i=2;i<=t;i++){
+		if(p[i].w>d[ct].w){
+			if(p[i].v<d[ct].v){
+				ed=p[i].l;
+				Next[p[i].l]=d[ct].l;
+				ct++;
+				deal(&d[ct],p[i]);
+			}
+			else{
+				if(d[ct].v==p[i].v)continue;
+				int l=1,r=ct;
+				while(l<r){
+					int mid=(r-l>>1)+l;
+					if(d[mid].v>p[i].v){
+						l=mid+1;
+					}else{
+						r=mid-1;
+					}
+				}
+				Next[p[i].l]=Next[d[l].l];
+				deal(&d[l],p[i]);
+				
+			}
+		}
+	}
+	cout<<ct<<endl;
+	print(ed,ct);
+	return 0;
+}*/
